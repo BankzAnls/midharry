@@ -192,7 +192,7 @@ angular.module('App', [])
       if ($scope.choose[index].quantity > 0) {
         $scope.choose[index].quantity -= 1
         $scope.num -= 1
-      }else if ($scope.choose[index].quantity === 1) {
+      } else if ($scope.choose[index].quantity === 1) {
         $scope.choose.splice(index, 1)
         $scope.sell = 0
         $scope.num -= 1
