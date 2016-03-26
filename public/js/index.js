@@ -1,7 +1,6 @@
-(function(){
- 
-  $("#cart").on("click", function() {
-    $(".shopping-cart").fadeToggle( "fast");
-  });
-  
-})();
+/* global jQuery*/
+;(function () {
+  ('#cart').on('click', function () {
+    ('.shopping-cart').fadeToggle('fast')
+  })
+})(jQuery)

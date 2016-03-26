@@ -63,7 +63,7 @@ nav ul li a:hover {
   margin: -41px 95px;
   float: right;
   background: white;
-  width: 320px;
+  width: 250px;
   right: 0px;
   position: absolute;
   border-radius: 3px;
@@ -72,10 +72,10 @@ nav ul li a:hover {
 }
 .shopping-cart .shopping-cart-header {
   border-bottom: 1px solid #E8E8E8;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
 .shopping-cart .shopping-cart-header .shopping-cart-total {
-  float: right;
+
 }
 .shopping-cart .shopping-cart-items {
   padding-top: 20px;

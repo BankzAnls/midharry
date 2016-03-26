@@ -36,23 +36,24 @@
   </div> <!--end container -->
   <div class="shopping-cart">
     <div class="shopping-cart-header">
-      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">{{num}}</span>
       <div ng-repeat="data in choose" ng-if="data.quantity !== 0">
         <div class="shopping-cart-total">
+          <button  type="button" class="btn btn-info" ng-click="del(data,$index)">-</button>
+
           <span class="lighter-text">{{data.name}} : </span>
 
-          <span class="main-color-text">{{data.quantity*100}} bath.</span>
+          <span id = "sum-{{$index}}" class="main-color-text">{{data.quantity*100}}</span>bath.
 
-        </div><br>
-
+        </div>
       </div>
-      <span class="lighter-text" ng-show="check">
+      <div class="lighter-text" ng-show="check">
+        <hr>
         <right>
-      subtotal : {{num*100}}<br>
-      discount : {{sell}}<br>
-      Total ({{num}}) : {{num*100 - sell}}
+      &nbsp;&nbsp;&nbsp;&nbsp;subtotal : {{num*100}}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;discount : {{sell}}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;Total ({{num}}) : <a id = "total">{{num*100 - sell}}</a>
     </right>
-</span>
+</div>
     </div> <!--end shopping-cart-header -->
   </div>
 </nav>
@@ -61,11 +62,13 @@
         <div class="row">
             <div class="col-md-12">
             <div class="col-xs-8 col-md-4" ng-repeat="data in books">
-              <div class="container">
-                <img  class="img-responsive img-thumbnail" alt="" ng-src="./img/{{data.img}}" width="320px" height="320px" >
-                <br> <br> {{data.price}} bath.
-                <button type="button" class="btn btn-info" ng-click="add(data,$index)">+</button>
-              </div>
+
+                <img  class="img-thumbnail" ng-src="./img/{{data.img}}" width="320px" height="320px" >
+                  <br> <br> <b><h3>{{data.price}} bath.</h3></b><br>
+                    <button id = "sector-{{$index}} " type="button" class="btn btn-info" ng-click="add(data,$index)">
+                      <i class="fa fa-shopping-cart"></i> Buy</button>
+
+
               <br>
 
             </div>

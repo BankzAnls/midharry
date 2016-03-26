@@ -188,8 +188,7 @@ angular.module('App', [])
       } while (exit !== 1)
       console.log($scope.sell)
     }
-
-    $scope.del = function (index) {
+    $scope.del = function (data, index) {
       if ($scope.choose[index].quantity > 0) {
         $scope.choose[index].quantity -= 1
         $scope.num -= 1
@@ -198,6 +197,7 @@ angular.module('App', [])
         $scope.sell = 0
         $scope.num -= 1
       }
+      $scope.disAgain()
     }
     $scope.checkadd = function (id) {
       for (var ch_data = 0; ch_data < $scope.choose.length; ch_data++) {
