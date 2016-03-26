@@ -1,0 +1,51 @@
+<html ng-app="App">
+<head >
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+	<script src="app.js"></script>
+
+
+<title></title>
+</head>
+<body ng-controller="AppListController">
+	<table  ng-repeat = "data in books">
+		<tr>
+			<td>
+				 <img ng-src="./img/{{data.img}}" alt="" width = "40%" >
+	</td>
+</tr>
+<tr>
+			<td>
+				{{data.price}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<button type="button" name="button" ng-click="add(data,$index)">Buy</button>
+			</td>
+		</tr>
+
+	</table>
+	<table border="1">
+		<tr ng-repeat="data in choose" ng-if="data.quantity !== 0">
+			<td>
+			{{data.name}}
+			</td>
+			<td>
+				{{data.price}}
+			</td>
+			<td>
+				{{data.quantity}}
+			</td>
+			<td>
+				<button type="button" name="button" ng-click="del($index)">Del</button>
+			</td>
+		</tr>
+	</table>
+	<br>
+	subtotal : {{num*100}}<br>
+	discount : {{sell}}<br>
+	Total ({{num}}) : {{num*100 - sell}}
+</body>
+
+</html>
