@@ -65,4 +65,40 @@ describe('test yahoo search results', function () {
     })
     expect(link).to.equal('540')
   })
+  it('buy two sector 2 books and buy seven sector 1 books equal 280 ', function * () {
+    this.timeout(30000)
+    var nightmare = Nightmare()
+    var link = yield nightmare
+    .goto('http://localhost:5000')
+    .click('#sector-1')
+    .click('#sector-1')
+    .click('#sector-6')
+
+    .wait(1000)
+    .evaluate(function () {
+      return document.querySelector('#total').innerHTML
+    })
+    expect(link).to.equal('280')
+  })
+  it('buy five sector 10 books equal 1000 ', function * () {
+    this.timeout(30000)
+    var nightmare = Nightmare()
+    var link = yield nightmare
+    .goto('http://localhost:5000')
+    .click('#sector-4')
+    .click('#sector-4')
+    .click('#sector-4')
+    .click('#sector-4')
+    .click('#sector-4')
+    .click('#sector-4')
+    .click('#sector-4')
+    .click('#sector-4')
+    .click('#sector-4')
+    .click('#sector-4')
+    .wait(1000)
+    .evaluate(function () {
+      return document.querySelector('#total').innerHTML
+    })
+    expect(link).to.equal('1000')
+  })
 })
